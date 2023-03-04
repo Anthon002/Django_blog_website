@@ -1,0 +1,18 @@
+{% load static %}
+<!DOCTYPE html>
+<html>    
+    <head>
+        <title> Change Username and Password</title>
+        <link rel="stylesheet" href={% static '/css/main.css'%}>
+    </head>
+    <body class="changeUsernameBody">
+        <form class="changeUsernameForm" method="POST">
+            {% csrf_token %}
+            {% for field in uForm%}
+                <div class='usernameLabel'>{{field.label}}</div>
+                <div class='usernameField'>{{field}}</div>
+            {% endfor %}
+            <input type="submit" value="Change">
+        </form>
+    </body>
+</html>

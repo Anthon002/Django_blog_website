@@ -1,0 +1,586 @@
+:root {
+  --main-bg-color: #EDF5E1;
+  --main-text-color: #05386B;
+  --button-bg-color: #379683;
+  --button-text-color: #EDF5E1;
+}
+body{
+    background-color: #5BDA93 ;
+}
+a{
+    text-decoration: none;
+    
+}
+.navbar{
+    position: absolute ;
+    left:0;
+    top:0;
+    grid-template-columns: 20% 60 20%;
+    background-color: #469A89;
+    width:100vw;
+    margin-right:100px;
+    padding-bottom: 20px;
+
+}
+.navbar .logo{
+    position: absolute;
+    top:5vh;
+    left:35vw;
+    font-size: 300%;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 900;
+    color: antiquewhite;
+}
+.navbar .nav_section1{
+  
+}
+.navbar .nav_section1 .profile_img .img{
+    width:10vw;
+    height:10vh;
+    padding-left:10px;
+    padding-top: 10px;
+    border-radius: 100px;
+}
+
+.navbar .nav_section1 .username{
+    font-size: 20px;
+    color:aliceblue;
+    font-weight:800;
+    margin-left: 2vw;
+}
+
+.navbar .nav_section2{
+    grid-template-columns: 33% 33% 33%;
+    margin-left:50vw;
+    margin-top:-20px;
+   
+}
+.nav_section2 .nav1{
+font:12px;
+font-weight:800;
+padding-left:2vw;
+height: 20px;
+
+}
+.nav_section2 .nav1 a{
+    color:#d3d6cf;
+}
+.main{
+    position: absolute;
+    display:grid;
+    grid-template-columns: repeat(4,1fr);
+    margin-top:20vh;
+    padding-top: 10px ;
+
+}
+.main .post{
+    margin-bottom: 10px;
+    border:2px solid black;
+    width:20vw;
+    height: 20vh;
+    overflow:hidden;
+    color: Black;
+    background-color: #EDF5E0;
+    margin-left:2vw;
+}
+.main .post:hover {
+  background-color: #5cdbb9;
+}
+.main .post .author{
+    background-color:#afb3aa ;
+    padding-right:10px;
+    width: fit-content;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.main .post .title{
+    font-weight:800;
+    padding: 5px;
+}
+.createPost .form{
+    display:grid;
+
+}
+.createPost .form .formset{
+    display: grid ;
+    justify-content: center;
+    justify-items: center;
+    margin-top:20vh;
+    margin-left: 25vw;
+    width: 50vw;
+    padding-top: 5vh;
+    background-color: #44ae6c;
+    
+}
+/* Global styles */
+  
+  /* Login form styles */
+  .loginBody {
+    background-color: #edf5e1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  .loginForm {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+    background-color: #05386b;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+  }
+  
+  .loginForm input[type="text"],
+  .loginForm input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: none;
+  }
+  
+  .username {
+    background-color: #379683;
+    color: #edf5e1;
+  }
+  
+  .password {
+    background-color: #5cdb95;
+    color: #edf5e1;
+  }
+  
+  .submit {
+    width: 100%;
+    padding: 10px;
+    background-color: #8ee4af;
+    color: #05386b;
+    border-radius: 5px;
+    border: none;
+    font-weight: bold;
+  }
+  
+  .submit:hover {
+    cursor: pointer;
+    background-color: #5cdb95;
+    color: #edf5e1;
+  }
+  
+  .DHA {
+    margin-top: 20px;
+    color: #ffffff;
+    font-size: 14px;
+  }
+  
+  .signUpHl {
+    color: #5cdb95;
+    font-weight: bold;
+  }
+  /* Register Page Design*/
+  /* Body styles */
+  
+  .registerBody {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #EDF5E1;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+  }
+  
+  /* Form styles */
+  .registerForm {
+    background-color: #8EE4AF;
+    padding: 50px;
+    border-radius: 10px;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
+    color: #05386b;
+    max-width: 600px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .registerForm input[type="text"],
+  .registerForm input[type="email"],
+  .registerForm input[type="password"] {
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    width: 80%;
+    background-color: #EDF5E1;
+    color: #05386b;
+    text-align: center;
+  }
+  
+  .label {
+    margin-bottom: 10px;
+    font-weight: bold;
+    text-align: center;
+  }
+  
+  .registerErrors {
+    color: #f54242;
+    margin-top: 5px;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  .registerSubmit {
+    background-color: #5CDB95;
+    color: #05386b;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 20px;
+  }
+  
+  /* Link styles */
+  .loginLink {
+    color: #05386b;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  .loginLink:hover {
+    color: #379683;
+  }
+  
+  .AHA {
+    text-align: center;
+    margin-top: 20px;
+    color: #05386b;
+    font-weight: bold;
+  }
+  /*settings page*/
+  .settingsBody {
+    background-color: #EDF5E1;
+  }
+  
+  .pro_Pic {
+    background-color: #5CDB95;
+    color: #05386b;
+    padding: 10px;
+    border-radius: 10px;
+    margin: 10px;
+    text-align: center;
+    font-size: 1.5em;
+    font-weight: bold;
+    text-decoration: none;
+  }
+  
+  .pro_Pic:hover {
+    background-color: #8EE4AF;
+  }
+  
+  .useName {
+    background-color: #379683;
+    color: #EDF5E1;
+    padding: 10px;
+    border-radius: 10px;
+    margin: 10px;
+    text-align: center;
+    font-size: 1.5em;
+    font-weight: bold;
+    text-decoration: none;
+  }
+  
+  .useName:hover {
+    background-color: #05386b;
+  }
+  /* profile pic settnigs */
+  
+.pic_settingBody {
+  background-color: var(--main-bg-color);
+  color: var(--main-text-color);
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 20px;
+}
+
+/* Form Styles */
+.settings_form {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+}
+
+.settings_form label {
+  margin-bottom: 10px;
+}
+
+.settings_form input[type="file"] {
+  margin-bottom: 20px;
+}
+
+.settings_form input[type="submit"] {
+  background-color: var(--button-bg-color);
+  border: none;
+  border-radius: 4px;
+  color: var(--button-text-color);
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 10px 20px;
+}
+
+/* Image Styles */
+.setting_img_div {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.setting_img {
+  border-radius: 50%;
+  border: 5px solid var(--button-bg-color);
+}
+
+/* Responsive Styles */
+@media only screen and (min-width: 768px) {
+  .pic_settingBody {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+}
+
+/* Change username and password */
+
+.changeUsernameBody {
+  background-color: #EDF5E1;
+}
+
+.changeUsernameForm {
+  margin: 0 auto;
+  width: 80%;
+  max-width: 500px;
+  padding: 20px;
+  background-color: #8EE4AF;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.usernameLabel {
+  font-size: 16px;
+  color: #05386b;
+  margin-top: 10px;
+}
+
+.usernameField {
+  margin-bottom: 20px;
+}
+
+input[type="text"],
+input[type="password"] {
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 16px;
+  width: 100%;
+  box-sizing: border-box;
+  background-color: #5CDB95;
+  color: #05386b;
+}
+
+.change_values {
+  background-color: #379683;
+  color: #EDF5E1;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+/*Specific post*/
+
+.specificPostBody {
+  background-color: #EDF5E1;
+  padding: 20px;
+}
+
+.specificPostAurthor {
+  color: #05386b;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.specificPostTitle {
+  color: #379683;
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+.specificPostContent {
+  color: #05386b;
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+.specificPostForm {
+  display: inline-block;
+}
+
+.LikeButton,
+.UnLikeButton {
+  background-color: #5CDB95;
+  color: #05386b;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.LikeButton:hover,
+.UnLikeButton:hover {
+  background-color: #8EE4AF;
+}
+
+.LikeButton:focus,
+.UnLikeButton:focus {
+  outline: none;
+}
+
+.AddComment button,
+.DisplayComment button {
+  background-color: #379683;
+  color: #EDF5E1;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  margin-right: 10px;
+  margin-top:10px;
+}
+
+.AddComment button:hover,
+.DisplayComment button:hover {
+  background-color: #5CDB95;
+}
+
+.AddComment button:focus,
+.DisplayComment button:focus {
+  outline: none;
+}
+
+strong {
+  color: #05386b;
+  font-size: 20px;
+  margin-left: 10px;
+}
+/*create comment*/
+
+.createCommentBody {
+  background-color: #EDF5E1;
+  padding: 20px;
+}
+
+.createCommentForm {
+  display: flex;
+  flex-direction: column;
+}
+
+.createCommentForm label {
+  color: #05386b;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.createCommentForm input[type="text"],
+.createCommentForm textarea {
+  background-color: #EDF5E1;
+  border: none;
+  border-bottom: 2px solid #05386b;
+  color: #05386b;
+  font-size: 16px;
+  padding: 5px;
+  margin-bottom: 20px;
+}
+
+.createCommentForm input[type="text"]::placeholder,
+.createCommentForm textarea::placeholder {
+  color: #05386b;
+}
+
+.createCommentForm input[type="text"]:focus,
+.createCommentForm textarea:focus {
+  outline: none;
+  border: 2px solid #379683;
+}
+
+.AddCommentDiv {
+  margin-bottom: 20px;
+}
+
+.submitComment {
+  background-color: #5CDB95;
+  color: #05386b;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  padding-bottom:10px;
+  padding-top:10px;
+  margin-left:10vw;
+  width: 10%;
+  cursor: pointer;
+}
+
+.submitComment:hover {
+  background-color: #8EE4AF;
+}
+
+.submitComment:focus {
+  outline: none;
+}
+
+/* Display comment */
+.displayCommentBody {
+  background-color: #EDF5E1;
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  color: #05386b;
+  padding: 20px;
+}
+
+/* Comment box */
+.displayComments {
+  border: 1px solid #5CDB95;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  padding: 10px;
+  background-color: #8EE4AF;
+}
+
+/* Comment content */
+.displayComments:first-child {
+  margin-top: 0;
+}
+
+.displayComments:last-child {
+  margin-bottom: 0;
+}
+
+.displayComments p {
+  margin: 0;
+}
+
+/* Comment author */
+.displayComments span {
+  font-weight: bold;
+  color: #379683;
+}

@@ -1,0 +1,17 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>My Page</title>
+    <link rel="stylesheet" href={% static '/css/main.css'%}>
+  </head>
+  <body class="settingsBody">
+    <a href="/profile_pic/">
+      <div class="pro_Pic">Change Profile Picture</div>
+    </a>
+
+    <a href="/changeUsername">
+      <div class="useName">Change Username and Password</div>
+    </a>
+  </body>
+</html>

@@ -1,0 +1,1 @@
+web gunicorn Liker.wsgi:applicaton --log-file -

@@ -1,0 +1,26 @@
+{% extends 'pages/publicPost.html'%}
+{% load static %}
+<html>
+    <head>
+        <link rel="stylesheet" href={% static '/css/main.css'%}>
+    </head>
+<body>
+{% block content %}
+<div>
+    <img width="100px" src="{{ request.user.profile.profile_pic.url}}">
+</div>
+<main class='main'>
+{% for personalPost in personalPosts%}
+<a href="/specificPost/{{ personalPost.id }}">  
+
+    <div class="post">
+        <div class='title'> {{personalPost.title}} </div>
+        <div class = 'content'> {{personalPost.content}} </div>
+    </div>
+</a>
+<div> <a href="/delete/{{personalPost.id}}"> Delete Post </a></div>
+{% endfor %}
+</main>
+{% endblock %}
+</body>
+</html>
