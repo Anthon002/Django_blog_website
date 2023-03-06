@@ -1,0 +1,15 @@
+{% load static %}
+<html>
+    <head>
+        <title>Post</title>
+        <link rel="stylesheet" href={% static '/css/main.css'%}>
+    </head>
+    <body class="displayCommentBody">
+        {% for obj in pcomment %}
+        <div class="displayComments">
+        {{ obj.content }} 
+        {{ obj.Profile.user}}
+        </div>
+    {% endfor %}
+    </body>
+</html>

@@ -1,0 +1,48 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Public Post</title>
+    <link rel="stylesheet" href={% static '/css/main.css'%}>
+</head>
+    <body>
+        {% block content %}
+
+        {% endblock %}
+        
+        <nav class="navbar">
+            <span class="nav_section1">   
+                <div class="profile_img">
+                    <img class="img" src="{{ request.user.profile.profile_pic.url}}">
+                </div>
+                <span class="username">{{request.user}}</span>
+            </span>
+            <a href="/post/"><span class="logo">  Scribbles & Thought   </span></a>
+            <span class="nav_section2">
+                <span class="nav1"> <a href="/private_Post/{{request.user.id}}/" > personal posts</a></span>
+                <span class="nav1"> <a href="/createPost/{{request.user.id}}/" > Create Post</a></span>
+                <span class="nav1"> <a href="/settings">Settings</a></span>
+                <span class="nav1"> <a href="/logout/">  Logout  </a> </span>
+            </span>
+        </nav>
+
+        <main class="main">
+            {% for post in posts%}
+            <!-- For individual posts -->
+            <a href="/specificPost/{{ post.id }}">   
+                <div class="post">
+                    <div class="author"> {{post.profile}}</div>
+                    <div class="title">  {{post.title }} </div>
+                    <div class="content">  {{post.content }} </div>
+                <br>
+                </div>
+            </a>
+            {% endfor %}
+           
+        </main>
+        
+    </body>
+</html>

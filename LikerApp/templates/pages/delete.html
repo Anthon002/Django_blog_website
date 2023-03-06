@@ -1,0 +1,6 @@
+<form method="POST" action="">
+    {% csrf_token %}
+    Are you sure you want to delete {{item}}
+    <a href="/post/"> <button> Cancel </button> </a>
+    <a href ="/post/"> <input type="submit" name="Accept"></a>
+</form>
