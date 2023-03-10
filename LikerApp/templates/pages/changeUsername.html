@@ -7,6 +7,7 @@
         <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body class="changeUsernameBody">
+        <div><a href="/post/"><span class="logo">  Thoughts & Scribbles   </span></a></div>
         <form class="changeUsernameForm" method="POST">
             {% csrf_token %}
             {% for field in uForm%}

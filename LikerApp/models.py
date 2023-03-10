@@ -24,10 +24,33 @@ post_save.connect(update_profile,sender=User)
 
 
 class Post(models.Model):
+    TAG_CHOICES = (
+    ("Blogging", "Blogging"),
+    ("Writing", "Writing"),
+    ("Tips", "Tips"),
+    ("How-to", "How-to"),
+    ("Reviews", "Reviews"),
+    ("News", "News"),
+    ("Trends", "Trends"),
+    ("Opinion", "Opinion"),
+    ("Personal", "Personal"),
+    ("Stories", "Stories"),
+    ("Humor", "Humor"),
+    ("Inspiration", "Inspiration"),
+    ("Education", "Education"),
+    ("Entertainment", "Entertainment"),
+    ("Lifestyle", "Lifestyle"),
+    ("Health", "Health"),
+    ("Fitness", "Fitness"),
+    ("Food", "Food"),
+    ("Fashion", "Fashion"),
+    ("Beauty", "Beauty"),
+    )
     profile=models.ForeignKey(Profile,on_delete=models.SET_NULL,null=True,related_name='profile')
     title=models.CharField(max_length=200,null=True)
     content=models.TextField(max_length=1500,null=True)
     liked=models.ManyToManyField(User,default=None, blank=True, related_name='liked')
+    tag=models.CharField(choices=TAG_CHOICES,max_length=200,default=False,null=True)
     
     def __str__(self):
         return str(self.title)

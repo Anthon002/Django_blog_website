@@ -23,7 +23,7 @@ a{
     padding-bottom: 20px;
 
 }
-.navbar .logo{
+.navbar .logo , .logo {
     position: absolute;
     top:5vh;
     left:35vw;
@@ -54,6 +54,7 @@ a{
     grid-template-columns: 33% 33% 33%;
     margin-left:50vw;
     margin-top:-10px;
+    z-index: 1;
    
 }
 .nav_section2 .nav1{
@@ -68,15 +69,29 @@ padding-left:5vw;
     color:#d3d6cf;
 }
 
-.navbar .search .searchForm{
+.searchDiv{
+  position: absolute;
+  margin-top:18vh;
+  padding-bottom:10px;
+  z-index:1;
+  width:100vw;
+  right:0vw;
+  background-color: #469A89 ;
+}
 
+
+.searchDiv .searchTitle input{
+
+  width:50%;
+  background-color: #EDF5E1;
+  margin-left:0vw;
 }
 
 .main{
     position: absolute;
     display:grid;
     grid-template-columns: repeat(4,1fr);
-    margin-top:20vh;
+    margin-top:10vh;
     padding-top: 20vh ;
 
 }
@@ -105,7 +120,7 @@ padding-left:5vw;
 }
 
 @media(max-width:767px){
-  .navbar .logo {
+  .navbar .logo, .logo{
     font-size:100%;
   }
   .navbar .nav_section1 .username{
@@ -123,7 +138,11 @@ padding-left:5vw;
     margin-left:10px;
     width: 80px;
     border-radius: 50%;
-}
+  }
+  .searchDiv{
+    margin-top:20vh;
+    padding-top:5vh;
+  }
   .main{
     grid-template-columns: 1fr;
     margin-top: 45%;
@@ -405,12 +424,22 @@ padding-left:5vw;
   font-family: Arial, Helvetica, sans-serif;
   padding: 20px;
 }
+.pic_settingBody .logo{
+  position:relative;
+  left:140px;
+  top:0px;
+  color:#05386B;
+}
 
 /* Form Styles */
 .settings_form {
   display: flex;
   flex-direction: column;
   margin-top: 20px;
+}
+.settings_form p{
+  color:red;
+  font-size: 20px;
 }
 
 .settings_form label {
@@ -473,6 +502,12 @@ padding-left:5vw;
 
 .changeUsernameBody {
   background-color: #EDF5E1;
+}
+.changeUsernameBody .logo {
+  position: relative;
+  top:0px;
+  left:36vw;
+  color: #05386B ;
 }
 
 .changeUsernameForm {

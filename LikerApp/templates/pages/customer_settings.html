@@ -5,7 +5,9 @@
         <link rel="stylesheet" href={% static '/css/main.css'%}>
         <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
+    
     <body class="pic_settingBody">
+        <div><a href="/post/"><span class="logo">  Thoughts & Scribbles   </span></a></div>
         <div class="setting_img_div">
             <img class="setting_img" width="100px" src="{{request.user.profile.profile_pic.url}}">
         </div>

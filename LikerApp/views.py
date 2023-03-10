@@ -86,7 +86,7 @@ def createPost(request,pk):
     user= get_object_or_404(User,id=pk)
     if request.user != user:
         raise Http404("You are not authorized to view this page.")
-    orderFormSet=inlineformset_factory(Profile,Post, fields=('title','content'),extra=1)
+    orderFormSet=inlineformset_factory(Profile,Post, fields=('title','content','tag','keywords'),extra=1)
     formset=orderFormSet(queryset=Post.objects.none(),instance=profile)
     if request.method == 'POST':
         formset=orderFormSet(request.POST,instance=profile)

@@ -20,21 +20,21 @@
                 </div>
                 <span class="username">{{request.user}}</span>
             </span>
-            <a href="/post/"><span class="logo">  Scribbles & Thought   </span></a>
+            <a href="/post/"><span class="logo">  Thoughts & Scribbles   </span></a>
             <span class="nav_section2">
                 <span class="nav1"> <a href="/private_Post/{{request.user.id}}/" > personal posts</a></span>
                 <span class="nav1"> <a href="/createPost/{{request.user.id}}/" > Create Post</a></span>
                 <span class="nav1"> <a href="/settings">Settings</a></span>
                 <span class="nav1"> <a href="/logout/">  Logout  </a> </span>
             </span>
-            <div class='search'> 
-                <form method="get" class="searchForm">
-                    <div class="searchTitle">Search{{searchFilter.form}}</div>
-                    <input value="search" type="submit">
-                </form>
-            </div>
         </nav>
 
+        <div class='searchDiv'> 
+            <form method="get" class="searchForm">
+                <span class="searchTitle">{{searchFilter.form}}</span>
+                <input value="search" type="submit">
+            </form>
+        </div>
 
         <main class="main">
             {% for post in posts%}
