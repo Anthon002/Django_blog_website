@@ -27,7 +27,14 @@
                 <span class="nav1"> <a href="/settings">Settings</a></span>
                 <span class="nav1"> <a href="/logout/">  Logout  </a> </span>
             </span>
+            <div class='search'> 
+                <form method="get" class="searchForm">
+                    <div class="searchTitle">Search{{searchFilter.form}}</div>
+                    <input value="search" type="submit">
+                </form>
+            </div>
         </nav>
+
 
         <main class="main">
             {% for post in posts%}

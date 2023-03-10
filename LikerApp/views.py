@@ -8,6 +8,8 @@ from .models import *
 from .decorators import *
 from django.contrib.auth.decorators import login_required
 from django.forms import inlineformset_factory
+from .filters import SearchFilter
+
 # Create your views here.
 @unauthenticated_user
 def register(request):
@@ -42,11 +44,14 @@ def logoutUser(request):
 def publicPost(request):
     posts=Post.objects.all()
     profile= Profile.objects.all()
+    searchFilter = SearchFilter( request.GET, queryset=posts)
+    posts=searchFilter.qs
     user= request.user
     context={
         'posts':posts,
         'user':user,
-        'profile':profile
+        'profile':profile,
+        'searchFilter':searchFilter
     }
     return render(request,'pages/publicPost.html/',context)
 

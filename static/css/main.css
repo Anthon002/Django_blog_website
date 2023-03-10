@@ -68,12 +68,16 @@ padding-left:5vw;
     color:#d3d6cf;
 }
 
+.navbar .search .searchForm{
+
+}
+
 .main{
     position: absolute;
     display:grid;
     grid-template-columns: repeat(4,1fr);
     margin-top:20vh;
-    padding-top: 10px ;
+    padding-top: 20vh ;
 
 }
 .main .post{
