@@ -6,7 +6,7 @@ app_name='LikerApp'
 urlpatterns=[
     path('',views.loginUser,name='loginUser'),
     path('signup/',views.register,name='signup'),
-    path('login/',views.loginUser,name='loginUser'),
+    path('login/', views.loginUser, name='loginUser'),
     path('profile/<str:pk>',views.profilePage,name="profile"),
     path('private_Post/<str:pk>/',views.personalPost,name='private_Post'),
     path('post/',views.publicPost,name='public_post'),
@@ -19,5 +19,6 @@ urlpatterns=[
     path('specificPost/<str:pk>/',views.specificPost, name="specificPost"),
     path('delete/<str:pk>/',views.delete,name='delete'),
     path('changeUsername/',views.changeUsername,name="changeUsername"),
-    path('settings/',views.settingsPage)
+    path('settings/',views.settingsPage),
+    path('searchPage/',views.searchPost,name='searchPost')
     ]

@@ -70,21 +70,23 @@ padding-left:5vw;
 }
 
 .searchDiv{
-  position: absolute;
-  margin-top:18vh;
-  padding-bottom:10px;
-  z-index:1;
-  width:100vw;
-  right:0vw;
-  background-color: #469A89 ;
+width: 100vw;
+z-index:1;
+position: absolute;
+margin-top: 20vh;
 }
 
+.searchDiv .searchForm{
+display: grid;
+grid-template-columns: 1fr 0.2fr;
+}
 
-.searchDiv .searchTitle input{
-
-  width:50%;
-  background-color: #EDF5E1;
-  margin-left:0vw;
+.searchDiv .searchForm .textInput{
+background-color: #EDF5E0;
+width: 50vw;
+}
+.searchDiv .searchForm .submitInput{
+  margin-right:45vw ;
 }
 
 .main{
@@ -145,7 +147,7 @@ padding-left:5vw;
   }
   .main{
     grid-template-columns: 1fr;
-    margin-top: 45%;
+    margin-top: 15vh;
   }
   .main .post{
     width: 75vw;
@@ -345,7 +347,7 @@ padding-left:5vw;
   
   /* Link styles */
   .loginLink {
-    color: #05386b;
+    color: #6b3805;
     text-decoration: none;
     font-weight: bold;
   }

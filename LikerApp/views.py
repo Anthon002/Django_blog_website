@@ -8,7 +8,8 @@ from .models import *
 from .decorators import *
 from django.contrib.auth.decorators import login_required
 from django.forms import inlineformset_factory
-from .filters import SearchFilter
+from django.db.models import Q 
+#from .filters import SearchFilter
 
 # Create your views here.
 @unauthenticated_user
@@ -42,19 +43,30 @@ def logoutUser(request):
 
 @login_required(login_url='/login')
 def publicPost(request):
-    posts=Post.objects.all()
+    posts=Post.objects.all().order_by('-created_at')
     profile= Profile.objects.all()
-    searchFilter = SearchFilter( request.GET, queryset=posts)
-    posts=searchFilter.qs
+    #searchFilter = SearchFilter( request.GET, queryset=posts)
+    #posts=searchFilter.qs
     user= request.user
     context={
         'posts':posts,
         'user':user,
         'profile':profile,
-        'searchFilter':searchFilter
+        #'searchFilter':searchFilter
     }
     return render(request,'pages/publicPost.html/',context)
-
+@login_required(login_url='/login')
+def searchPost(request):
+    query=request.GET.get("search")
+    if query:
+        result=Post.objects.filter( Q(title__icontains=query)| Q(content__icontains=query) | Q(profile__user__username__icontains=query))
+    else:
+        result=""
+    context={
+        'result':result
+    }
+    return render(request,'pages/postSearch.html',context)
+@login_required(login_url='/login')
 def specificPost(request,pk):
     post=Post.objects.get(id=pk)
     context={
@@ -86,7 +98,7 @@ def createPost(request,pk):
     user= get_object_or_404(User,id=pk)
     if request.user != user:
         raise Http404("You are not authorized to view this page.")
-    orderFormSet=inlineformset_factory(Profile,Post, fields=('title','content','tag','keywords'),extra=1)
+    orderFormSet=inlineformset_factory(Profile,Post, fields=('title','content'),extra=1)
     formset=orderFormSet(queryset=Post.objects.none(),instance=profile)
     if request.method == 'POST':
         formset=orderFormSet(request.POST,instance=profile)
@@ -98,7 +110,7 @@ def createPost(request,pk):
     }
     return render(request,'pages/createPost.html',context)
 
-
+@login_required(login_url='/login')
 def delete(request,pk):
     post=Post.objects.get(id=pk)
     if request.method == "POST":
@@ -158,6 +170,7 @@ def display_comments(request,pk):
     return render(request,'pages/displayComment.html',context)
 
 #Change profile picture
+@login_required(login_url='/login')
 def customerSettings(request):
     customerForm= SettingsForm(instance=request.user.profile)
     if request.method == "POST":
@@ -172,6 +185,7 @@ def customerSettings(request):
     }
     return render(request,'pages/customer_settings.html',context)
 
+@login_required(login_url='/login')
 def changeUsername(request):
     uForm=UsernameForm(instance = request.user)
     if request.method == "POST":
@@ -182,5 +196,6 @@ def changeUsername(request):
     }
     return render(request,'pages/changeUsername.html',context)
 
+@login_required(login_url='/login')
 def settingsPage(request):
     return render(request,'pages/settings.html/')

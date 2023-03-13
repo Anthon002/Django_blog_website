@@ -28,16 +28,23 @@
                 <span class="nav1"> <a href="/logout/">  Logout  </a> </span>
             </span>
         </nav>
-
-        <div class='searchDiv'> 
-            <form method="get" class="searchForm">
-                <span class="searchTitle">{{searchFilter.form}}</span>
-                <input value="search" type="submit">
+        <div class='searchDiv'>
+            <form class="searchForm" method='GET' action='/searchPage'>
+                <input type='text' class='textInput' name='search' placeholder='Welcome to Thoughts and Scribbles'>
+                <button type='submit' class='submitInput'> <img src="{% static 'images/search.png' %}"> </button>
             </form>
         </div>
 
+      <!--  <div class='searchDiv'> 
+                <form method="get" class="searchForm">
+                    <span class="searchTitle">{{searchFilter.form}}</span>
+                    <input value="search" type="submit">
+                </form>
+            </div>
+        -->
+
         <main class="main">
-            {% for post in posts%}
+            {% for post in posts %}
             <!-- For individual posts -->
             <a href="/specificPost/{{ post.id }}">   
                 <div class="post">

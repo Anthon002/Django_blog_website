@@ -9,7 +9,9 @@
 
   </head>
   <body class="registerBody">
-    <form method="POST" class="registerForm">
+    <form method="POST" class="registerForm" >
+      <p class="AHA" > Already have an account? <a class="loginLink" href="/login">Sign in</a> </p>
+
       {% csrf_token %}
       {% for form in createUser %}
         <div class="label">{{ form.label }}</div>
@@ -18,7 +20,6 @@
         <br>
       {% endfor %}
       <input class="registerSubmit"type="submit" value="Sign Up">
-      <p class="AHA" > Already have an account? <a class="loginLink" href="/login">Sign in</a> </p>
     </form>
   </body>
 </html>
